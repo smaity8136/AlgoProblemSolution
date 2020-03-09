@@ -23,10 +23,10 @@ A partition like "ababcbacadefegde", "hijhklij" is incorrect, because it splits 
 
         if(str.length() == 0) return null;
         int l = str.length();
-        char[] arr = str.toCharArray();
+      
 
         for (int i=0; i<l;i++ ){
-            char c = arr[i];
+            char c = str.charAt(i) ;
             if(!map.containsKey(c)){
                 map.put(c, getLastIndex(c,str,i));
             }
@@ -37,7 +37,7 @@ A partition like "ababcbacadefegde", "hijhklij" is incorrect, because it splits 
         int i =0;
 
         for(;i<l;i++){
-            char cr = arr[i];
+            char cr = str.charAt(i) ;
             if(i>max){
                 max+=1;
                 res.add(max-min);
@@ -58,10 +58,9 @@ A partition like "ababcbacadefegde", "hijhklij" is incorrect, because it splits 
     }
 
     public static int getLastIndex(char c, String str, int i) {
-        char [] carr = str.toCharArray();
-        for (int j=i; j<str.length();j++){
+          for (int j=i; j<str.length();j++){
 
-            if(c==carr[j]) i=j;
+            if(c==str.charAt(i) ) i=j;
         }
         return i;
     }
