@@ -55,7 +55,7 @@ public class ValidParantheses {
 
     }
 */
-public boolean isValid(String sb) {
+public static boolean isValid(String sb) {
         char[] arr= sb.toCharArray();
         Stack<Character> s = new Stack<Character>();
         
