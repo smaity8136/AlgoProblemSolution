@@ -22,7 +22,7 @@ public class ValidParantheses {
       Input: {[]}
      Output: true
     * */
-
+/*
     public static boolean isValid(String s) {
 
         if(s.length()==0) return false;
@@ -54,8 +54,37 @@ public class ValidParantheses {
 
 
     }
-
-
+*/
+public boolean isValid(String sb) {
+        char[] arr= sb.toCharArray();
+        Stack<Character> s = new Stack<Character>();
+        
+        for(int i=0;i<arr.length;i++){
+            
+            if(arr[i]=='{' || arr[i]== '[' || arr[i]=='('){
+                s.push(arr[i]);
+            }
+            else if(arr[i] =='}' || arr[i] == ']' || arr[i]==')'){
+    
+             if(!s.empty()){ 
+                 char ch=s.pop();
+                if((arr[i]=='}' && ch !='{') ||
+                        (arr[i]==']' && ch !='[')
+                          ||(arr[i]==')' && ch !='('))
+                   {
+                       return false;
+                   }
+                 }
+                else{
+                    return false;
+                }
+            }
+        }
+        if(s.empty())
+         return true;
+        return false;
+        
+    }
     public static void main(String[] args) {
 
         //String s = "()[]{}";
