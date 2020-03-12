@@ -36,7 +36,7 @@ while (curr!=null){
  curr = node;
  
  while (curr!=null){
-  map.get(curr).random = curr.random;
+  map.get(curr).random = map.get(curr.random);
 
   curr = curr.next;  
  }
